@@ -67,12 +67,25 @@ sun_pos = np.array([0.6, 0.9])
 sun_circle = plt.Circle(sun_pos, 0.05, color='yellow', zorder=2)
 ax_scene.add_patch(sun_circle)
 
+# Sun Photons
+yellow_photon_pos = np.array([0.9, 0.9])
+yellow_photon_circle = plt.Circle(yellow_photon_pos, 0.01, color='yellow', zorder=1)
+ax_scene.add_patch(yellow_photon_circle)
+
+# Laser Photons
+red_photon_pos = np.array([0.9, 0.8])
+red_photon_circle = plt.Circle(red_photon_pos, 0.01, color='red', zorder=1)
+ax_scene.add_patch(red_photon_circle)
+
 # ----------------------
 # Add Text Labels
 # ----------------------
 ax_scene.text(sun_pos[0], sun_pos[1]-0.08, "Sun", color='black', fontsize=12, ha='center')
 ax_scene.text(object_center[0], object_center[1]-0.15, "Object", color='black', fontsize=12, ha='center')
 ax_scene.text(emitter[0], emitter[1]-0.08, "LiDAR", color='black', fontsize=12, ha='center')
+ax_scene.text(yellow_photon_pos[0]-0.08, yellow_photon_pos[1], "Sun Photons", color='black', fontsize=12, ha='center')
+ax_scene.text(red_photon_pos[0]-0.08, red_photon_pos[1], "Laser Photons", color='black', fontsize=12, ha='center')
+
 
 # ----------------------
 # Dynamic Scatter Plots
